@@ -1,4 +1,4 @@
-# Aviel-Drori-17-08-2020
+# WeatherMe
 
 This project is a simple weather application with react-native.
 
