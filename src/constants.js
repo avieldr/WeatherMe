@@ -5,9 +5,6 @@ export const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug
 export const UNIT_CELSIUS = 'C'
 export const UNIT_FAHRENHEIT = 'F'
 
-
-
-
 export const errors = {
     '503': {
         title: "Error 503 - Service Unavailable",

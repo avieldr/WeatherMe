@@ -4,18 +4,19 @@ import WeatherApi from '../api/weatherApi'
 import { EvilIcons } from '@expo/vector-icons'
 import { iconImages } from '../resources'
 import { Context as WeatherContext } from '../context/WeatherContext'
-import { UNIT_CELSIUS, UNIT_FAHRENHEIT } from '../constants'
-import { fahr2Celc, cels2Fahr } from '../commonTools'
+import { UNIT_FAHRENHEIT } from '../constants'
+import { fahr2Celc, } from '../commonTools'
 import { theme1, theme2 } from '../resources'
 
 const FavoritesLocThumbnail = (props) => {
     
     const { currentItem, nav } = props
     const [data, setData] = useState('')
-
+    const { state: { favoritesList, tempUnit, themePreference }, 
+    setCurrentLocation, 
+    updateFavorites 
+} = useContext(WeatherContext)
     
-
-    const { state: { favoritesList, tempUnit, themePreference }, setCurrentLocation, updateFavorites } = useContext(WeatherContext)
     useEffect(() => {
         getCurrentLocData()
     }, []);
@@ -72,7 +73,6 @@ const FavoritesLocThumbnail = (props) => {
             }}
             style={styles.navButton}
             >
-        
                 <EvilIcons name="arrow-right" size={40} color={theme.favoritesButton}/>
             </TouchableOpacity>
             <TouchableOpacity
@@ -83,7 +83,6 @@ const FavoritesLocThumbnail = (props) => {
                 <EvilIcons name="close-o" size={40} color={theme.favoritesButton}/>
             </TouchableOpacity>
         </View>
-
 
         <View style={[styles.bottomView, { backgroundColor: theme.favoritesBottomBackground }]}>
             <Text style={[styles.weatherText, { color: theme.mainTemperature }]}>{weatherText}</Text>
@@ -140,8 +139,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 20,
     },
-
-
 });
 
 export default FavoritesLocThumbnail;

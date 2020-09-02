@@ -7,7 +7,6 @@ import { Context as WeatherContext } from '../context/WeatherContext';
 import { theme1, theme2 } from '../resources'
 
 
-
 const SearchInput = () => {
 
     const [state, setState] = useState({ searchQuery: '', searchSuggestions: [], modalVisible: false})
@@ -17,7 +16,6 @@ const SearchInput = () => {
     const minPrefLenToSuggest = 3
     
     useEffect(() => {
-        // console.log("search query changed to: ", state.searchQuery)
         if (state.searchQuery.length >= minPrefLenToSuggest) {
             getSuggestions()
         }
@@ -43,7 +41,6 @@ const SearchInput = () => {
                 <Text >{item.LocalizedName}, {item.Country.LocalizedName}</Text>
                 <Feather name="arrow-up-right" size={20} color={theme.searchBar} style={styles.iconRight}/>
             </TouchableOpacity>
-            
         
         </View>
     }
@@ -78,9 +75,8 @@ const SearchInput = () => {
                 ))
                 : <Text>No Suggestions Found...</Text>
             }
-        
-        </View>
-           
+
+        </View> 
         }
     </View> 
     

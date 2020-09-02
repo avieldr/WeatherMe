@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Text } from 'react-native-elements'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { Context as WeatherContext } from '../context/WeatherContext'
 import { theme1, theme2 } from '../resources'
-
-
 
 
 const ToggleFavoritesButton = () => {
@@ -36,14 +33,9 @@ const ToggleFavoritesButton = () => {
                         isFavorite
                         ? <FontAwesome name={ "star" } size={20} style={[styles.activeIconStyle, { color: theme.activeButton}]} />
                         : <FontAwesome name={ "star-o" } size={20} style={[styles.inActiveIconStyle, { color: theme.inactiveButton}]} />
-                    }                    
-                    
+                    }                        
                     
                 </TouchableOpacity>
-
-         
-        
-        
     )
 }
 
@@ -58,7 +50,6 @@ const styles = StyleSheet.create({
         padding: 5,
         justifyContent: 'center',
     },
-   
 });
 
 export default ToggleFavoritesButton;

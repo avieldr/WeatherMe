@@ -39,9 +39,7 @@ const iconImages = {
     '42': require('./images/42-s.png'),
     '43': require('./images/43-s.png'),
     '44': require('./images/44-s.png'),
-    
 }
-
 
 const theme1 = {
     mainBackground: '#B2F3E8',

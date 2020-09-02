@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { Context as WeatherContext } from '../context/WeatherContext'
 import WeatherApi from '../api/weatherApi'
@@ -7,7 +7,6 @@ import { theme1, theme2 } from '../resources'
 
 const SetGeolocationButton = () => {
 
-    
     const { setCurrentLocation, state: { themePreference } } = useContext(WeatherContext)
 
     const theme = themePreference ? theme1 : theme2
@@ -19,15 +18,13 @@ const SetGeolocationButton = () => {
             console.log(currentGeopositionLoc?.Key)
             if (currentGeopositionLoc?.Key) {
                 setCurrentLocation(currentGeopositionLoc)
-            }
-            
+            }      
         }}
         style={[styles.toggleFavorites, { borderColor: theme.activeButton }]}
         >
-            <MaterialIcons name={ "my-location" } size={20} style={{ color: theme.activeButton }} />            
-            
+            <MaterialIcons name={ "my-location" } size={20} style={{ color: theme.activeButton }} />               
         </TouchableOpacity>
-        
+
     )
 }
 
@@ -40,8 +37,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    
-
 });
 
 export default SetGeolocationButton;

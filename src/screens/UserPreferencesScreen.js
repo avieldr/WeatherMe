@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Alert } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 import { Text, Input } from 'react-native-elements'
 import { Fontisto } from '@expo/vector-icons'
@@ -10,19 +10,17 @@ import WeatherApi from '../api/weatherApi'
 import { Context as WeatherContext } from '../context/WeatherContext'; 
 
 
-
 const UserPreferencesScreen = () => {
     const { toggleThemeColor, state: { themePreference } } = useContext(WeatherContext)
     const [ state, setState] = useState({ showApiSelect: false, apiKey: 1, insertKeyManuallyMode: false, keyInput: '' })
     const theme = themePreference ? theme1 : theme2
-    
+    console.log("render UserPreferencesScreen")
+
     return <SafeAreaView style={[styles.container, { backgroundColor: theme.favoritesBackground }]}>
 
         <View style={[styles.headerContainer, { borderBottomColor: theme.borders }]}>
             <Text style={[styles.headerText, { color: theme.titles }]}>USER PREFERENCSE</Text>
         </View>
-
-    
 
         <Button 
         title='Toggle Theme Color'
@@ -61,7 +59,6 @@ const UserPreferencesScreen = () => {
                     />
                 </View>
                 : <Input 
-                    // leftIcon={{ type: 'EvilIcons', name: 'search', color: theme.searchBar }}
                     rightIcon={ state.keyInput.length > 0 
                     ? { type: 'AntDesign', name: 'close', color: 'gray', onPress: () => setState({ ...state, keyInput: '' }) }
                     : null }
@@ -74,12 +71,10 @@ const UserPreferencesScreen = () => {
                     autoCorrect={false}
                 />
             }
-                
                 <Spacer/>
                 <Button 
                     title={ !state.insertKeyManuallyMode ? 'I have my own key (Insert manually)' : 'I do not have an AccuWeather ApiKey'}
                     onPressCallback={() => setState({ ...state, insertKeyManuallyMode: !state.insertKeyManuallyMode })}
-
                 />
                 <Spacer />
                 <Spacer />
@@ -87,23 +82,32 @@ const UserPreferencesScreen = () => {
                 <Button 
                     title="APPLY"
                     additionalTextStyle={{ color: 'red'}}
-                    onPressCallback={() => {WeatherApi.setApiKey(state.insertKeyManuallyMode ? state.keyInput : state.apiKey)}}
+                    onPressCallback={() => {
+                        Alert.alert(
+                            'Confirm Action',
+                            'Apply apiKey Changes?',
+                            [
+                                {
+                                text: 'Cancel',
+                                style: 'cancel'
+                                },
+                                { text: 'OK', onPress: () => WeatherApi.setApiKey(state.insertKeyManuallyMode ? state.keyInput : state.apiKey) }
+                             ],
+                            { cancelable: false }
+                            );
+                        
+                        }}
                 />
 
             </View>
         }
             
-
         </SafeAreaView>
-
-
-    
 }
 
 UserPreferencesScreen.navigationOptions = {
     title: 'Preferences',
     tabBarIcon: <Fontisto name="player-settings" size={20} />,
-    
 };
 
 const styles = StyleSheet.create({
@@ -112,18 +116,14 @@ const styles = StyleSheet.create({
         marginTop: 50,
         padding: 10,
         justifyContent: 'flex-start'
-        
     },
     headerContainer: {
         alignSelf: 'center',
         marginBottom: 30,
         borderBottomWidth: 2,
-        
-        
     },
     headerText: {
         fontSize: 24,
-        
     },
     selectedKeyButton: {
         flex: 1,
@@ -135,7 +135,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         backgroundColor: '#96BBCD'
     }
-   
 });
 
 export default UserPreferencesScreen;

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 import { FontAwesome } from '@expo/vector-icons'
@@ -34,11 +34,8 @@ const FavoritesScreen = ({ navigation }) => {
                 : <View style={{ alignItems: 'center', paddingTop: 50, paddingHorizontal: 30}}>
                     <Text style={{ fontSize: 18}}>No Saved Locations... Yet!</Text>
                     <Text style={{ textAlign: 'center'}}>You can add new locations from Main page by pressing the 'star' button</Text>
-                </View>
-                
-            }
-            
-     
+                </View>    
+            }  
     </SafeAreaView>
 }
 
@@ -52,21 +49,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: 40,
-        
-        
     },
     headerContainer: {
         alignSelf: 'center',
         marginBottom: 10,
         borderBottomWidth: 2,
-        
-        
     },
     headerText: {
         fontSize: 24,
-        
     }
-   
 });
 
 export default FavoritesScreen;

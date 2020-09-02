@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text } from 'react-native'
 
 
 const PrefButton = (props) => {
@@ -14,8 +14,6 @@ const PrefButton = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        // borderWidth: 1,
-        // borderColor: 'blue',
         borderRadius: 8,
         paddingVertical: 10,
         backgroundColor: '#96BBCD'
