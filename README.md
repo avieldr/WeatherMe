@@ -14,8 +14,7 @@ The app consists of three screens: Main, Favorites and User-Preferences
     
 <p float="left">
     <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/search.jpg" width="200"  />
-    <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015349_Expo.jpg" width="200" nowrap />
-    <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015435_Expo.jpg" width="200"  nowrap/>
+    <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015349_Expo.jpg" width="200" />
     <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015440_Expo.jpg" width="200"  />
 </p>
    
