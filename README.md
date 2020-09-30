@@ -6,7 +6,8 @@ The app consists of three screens: Main, Favorites and User-Preferences
 
 ## Important:
     App makes use on a free weather apiKey which allows limited daily use.
-    when max limit reached, the app will display an error message 503 - service not available
+    when max limit reached, the app will display an error message 503 - service not available.
+    You are able to manually change the ApiKey from the 'Preferences' screen.
     
 ## 1. Main screen - For a given location, it displays the current weather and a five-day-daily-forecast.
     Allows searching a location with auto-complete, save/remove a location to/from favorites,
