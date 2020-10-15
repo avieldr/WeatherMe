@@ -1,5 +1,0 @@
---> npm install -g expo-cli
---> npx expo-cli init weatherMe
---> cd weatherMe
---> rm -rf .git
---> npx expo-cli install react-navigation react-navigation-tabs react-native-screens react-native-reanimated react-native-gesture-handler
