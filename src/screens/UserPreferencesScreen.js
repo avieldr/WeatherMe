@@ -13,13 +13,12 @@ import { Context as WeatherContext } from '../context/WeatherContext';
 const UserPreferencesScreen = () => {
     const { toggleThemeColor, state: { themePreference } } = useContext(WeatherContext)
     const [ state, setState] = useState({ showApiSelect: false, apiKey: 1, insertKeyManuallyMode: false, keyInput: '' })
-    const theme = themePreference ? theme1 : theme2
     console.log("render UserPreferencesScreen")
 
-    return <SafeAreaView style={[styles.container, { backgroundColor: theme.favoritesBackground }]}>
+    return <SafeAreaView style={[styles.container]}>
 
-        <View style={[styles.headerContainer, { borderBottomColor: theme.borders }]}>
-            <Text style={[styles.headerText, { color: theme.titles }]}>USER PREFERENCSE</Text>
+        <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>USER PREFERENCSE</Text>
         </View>
 
         <Button 
@@ -30,30 +29,33 @@ const UserPreferencesScreen = () => {
         <Spacer />
 
         <Button 
-        title= { !state.showApiSelect ? 'Show AccuWeather api Key selection options' : 'Hide AccuWeather api Key selection options'}
+        title= { !state.showApiSelect ? 'Show AccuWeather ApiKey Selection Options' : 'Hide AccuWeather ApiKey Selection Options'}
         onPressCallback={() => setState({ ...state, showApiSelect: !state.showApiSelect })}
         />
 
         <Spacer />
         {
-            state.showApiSelect && <View style={{ borderRadius: 10, padding: 20, backgroundColor: '#D3E2EA'}}>
+            state.showApiSelect && <View style={{ borderRadius: 10, padding: 20, backgroundColor: '#EFEFEF'}}>
             {
                 !state.insertKeyManuallyMode 
                 ? <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                     <Button 
                         additionalStyle={state.apiKey === 1 ? styles.selectedKeyButton : styles.nonSelectedKeyButton}
+                        additionalTextStyle={state.apiKey === 1 ? styles.selectedKeyText : styles.nonSelectedKeyText}
                         title='KEY 1'
                         onPressCallback={() => setState({ ...state, apiKey: 1 })}
                     />
                     <Spacer />
                     <Button 
                         additionalStyle={state.apiKey === 2 ? styles.selectedKeyButton : styles.nonSelectedKeyButton}
+                        additionalTextStyle={state.apiKey === 2 ? styles.selectedKeyText : styles.nonSelectedKeyText}
                         title='KEY 2'
                         onPressCallback={() => setState({ ...state, apiKey: 2 })}
                     />
                     <Spacer />
                     <Button 
                     additionalStyle={state.apiKey === 3 ? styles.selectedKeyButton : styles.nonSelectedKeyButton}
+                    additionalTextStyle={state.apiKey === 3 ? styles.selectedKeyText : styles.nonSelectedKeyText}
                         title='KEY 3'
                         onPressCallback={() => setState({ ...state, apiKey: 3 })}
                     />
@@ -115,7 +117,8 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 50,
         padding: 10,
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+
     },
     headerContainer: {
         alignSelf: 'center',
@@ -127,13 +130,21 @@ const styles = StyleSheet.create({
     },
     selectedKeyButton: {
         flex: 1,
-        backgroundColor: 'red',
-        backgroundColor: '#233944'
+        borderColor: '#233944',
+        borderWidth: 2,
+
     },
     nonSelectedKeyButton: {
         flex: 1,
         backgroundColor: 'white',
         backgroundColor: '#96BBCD'
+    },
+    selectedKeyText: {
+        color: '#233944'
+    },
+    nonSelectedKeyText: {
+
+        color: 'white'
     }
 });
 

@@ -38,7 +38,7 @@ const SearchInput = () => {
                 setState({ ...state, modalVisible: false, searchQuery: '' })
             }}
             style={styles.suggestionLeftClickable}>
-                <Text >{item.LocalizedName}, {item.Country.LocalizedName}</Text>
+                <Text style={{ color: theme.searchBar }}>{item.LocalizedName}, {item.Country.LocalizedName}</Text>
                 <Feather name="arrow-up-right" size={20} color={theme.searchBar} style={styles.iconRight}/>
             </TouchableOpacity>
         
@@ -51,6 +51,8 @@ const SearchInput = () => {
             rightIcon={ state.searchQuery.length > 0 
             ? { type: 'AntDesign', name: 'close', color: theme.searchBar, onPress: () => setState({ ...state, searchQuery: '', modalVisible: false }) }
             : null }
+            color={theme.searchBar}
+            inputStyle={{ color: theme.searchBar  }}
             placeholder='Search Location'
             value={state.searchQuery}
             onChangeText={(text) => {

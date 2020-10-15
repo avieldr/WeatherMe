@@ -56,17 +56,17 @@ const theme1 = {
 }
 
 const theme2 = {
-    mainBackground: '#402B2A',
+    mainBackground: '#202020',
     titles: 'white',
     subtitles: 'gray',
-    activeButton: '#E3CAC7',
-    inactiveButton: '#2B110F',
+    activeButton: 'white',
+    inactiveButton: '#595959',
     searchBar: 'gray',
-    mainTemperature: '#F59085',
+    mainTemperature: '#F3BFBF',
     borders: 'gray',
-    favoritesBottomBackground: '#49403F',
-    favoritesButton: '#2B110F',
-    favoritesBackground: '#BFBABA'
+    favoritesBottomBackground: '#3B3B3B',
+    favoritesButton: 'white',
+    favoritesBackground: '#595959'
 
 }
 

@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         
-        borderBottomWidth: 1,
+        borderBottomWidth: 0,
         paddingBottom: 10
     },
     currentTempStatus: { 
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     mainFrame: {
-        borderWidth: 1,
+        borderWidth: 0,
         borderRadius: 10,
         paddingHorizontal: 10,
         paddingVertical: 20,
