@@ -22,11 +22,12 @@ The app consists of three screens: Main, Favorites and User-Preferences
     Has the ability to remove items from the list and set item as main location on the main screen.
     
     
-<img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015413_Expo.jpg" width="200"  />
+<img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/fav.jpg" width="200"  />
 
 ## 3. User Preferences - 
     Enables to toggle between light/dark theme colors, enables changing the apiKey (select from exists or insert manually).
 <p float="left">
-    <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200901-170758_Expo.jpg" width="200"  />
-    <img src="https://github.com/avieldr/Aviel-Drori-17-08-2020/blob/master/weatherMe/screenshots/Screenshot_20200821-015506_Expo.jpg" width="200"  />
+    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/home-dark.jpg" width="200"  />
+    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/fav-dark.jpg" width="200"  />
 </p>
+<img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/user_pref.jpg" width="200"  />
