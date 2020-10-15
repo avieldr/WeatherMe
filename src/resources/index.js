@@ -66,7 +66,7 @@ const theme2 = {
     borders: 'gray',
     favoritesBottomBackground: '#3B3B3B',
     favoritesButton: 'white',
-    favoritesBackground: '#595959'
+    favoritesBackground: '#202020'
 
 }
 
