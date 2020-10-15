@@ -14,7 +14,7 @@ The app consists of three screens: Main, Favorites and User-Preferences
     set location using device's location services and toggeling between Celsius to Fahrenheit display
     
 <p float="left">
-    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/home.jpg" width="200"  />
+    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/home1.jpg" width="200"  />
     <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/search.jpg" width="200" />
 </p>
    
@@ -28,6 +28,6 @@ The app consists of three screens: Main, Favorites and User-Preferences
     Enables to toggle between light/dark theme colors, enables changing the apiKey (select from exists or insert manually).
 <p float="left">
     <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/home-dark.jpg" width="200"  />
-    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/fav-dark.jpg" width="200"  />
+    <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/fav-dark1.jpg" width="200"  />
 </p>
 <img src="https://github.com/avieldr/WeatherMe/blob/master/screenshots/user_pref.jpg" width="200"  />
